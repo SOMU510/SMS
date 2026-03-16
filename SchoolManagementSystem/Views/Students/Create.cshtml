@@ -1,0 +1,149 @@
+@model SchoolManagementSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<div class="container-fluid">
+    <div class="pagetitle">
+        <h1>Add Student</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item"><a asp-action="Index">Students</a></li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Information</h5>
+                        <form asp-action="Create" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="AdmissionNo" class="form-label"></label>
+                                    <input asp-for="AdmissionNo" class="form-control" />
+                                    <span asp-validation-for="AdmissionNo" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="AdmissionDate" class="form-label"></label>
+                                    <input asp-for="AdmissionDate" type="date" class="form-control" />
+                                    <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="FirstName" class="form-label"></label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="LastName" class="form-label"></label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label asp-for="DateOfBirth" class="form-label"></label>
+                                    <input asp-for="DateOfBirth" type="date" class="form-control" />
+                                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Gender" class="form-label"></label>
+                                    <select asp-for="Gender" class="form-select">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span asp-validation-for="Gender" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="Status" class="form-label"></label>
+                                    <select asp-for="Status" class="form-select">
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Email" class="form-label"></label>
+                                    <input asp-for="Email" type="email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Phone" class="form-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label asp-for="Address" class="form-label"></label>
+                                    <textarea asp-for="Address" class="form-control" rows="3"></textarea>
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label asp-for="Class" class="form-label"></label>
+                                    <input asp-for="Class" class="form-control" />
+                                    <span asp-validation-for="Class" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Section" class="form-label"></label>
+                                    <input asp-for="Section" class="form-control" />
+                                    <span asp-validation-for="Section" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <h6 class="mt-4 mb-3">Parent/Guardian Information</h6>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label asp-for="ParentName" class="form-label"></label>
+                                    <input asp-for="ParentName" class="form-control" />
+                                    <span asp-validation-for="ParentName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="ParentPhone" class="form-label"></label>
+                                    <input asp-for="ParentPhone" class="form-control" />
+                                    <span asp-validation-for="ParentPhone" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label asp-for="ParentEmail" class="form-label"></label>
+                                    <input asp-for="ParentEmail" type="email" class="form-control" />
+                                    <span asp-validation-for="ParentEmail" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="text-end">
+                                <a asp-action="Index" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-save"></i> Save Student
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

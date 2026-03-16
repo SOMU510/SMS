@@ -1,0 +1,80 @@
+.student-form .form-label {
+  font-weight: 600;
+  color: #012970;
+  margin-bottom: 0.5rem;
+}
+
+.student-form .form-control,
+.student-form .form-select {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.student-form .form-control:focus,
+.student-form .form-select:focus {
+  border-color: #4154f1;
+  box-shadow: 0 0 0 0.2rem rgba(65, 84, 241, 0.25);
+}
+
+.student-form .text-danger {
+  color: #dc3545 !important;
+}
+
+.student-form .is-invalid {
+  border-color: #dc3545;
+}
+
+.student-form .invalid-feedback {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Progress Steps Styling */
+.nav-pills.nav-justified {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.nav-pills.nav-justified .nav-item {
+  flex: 1;
+  margin: 0;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.5rem;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  margin: 0;
+  padding: 12px 20px;
+  transition: all 0.3s;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #4154f1;
+  color: #fff;
+  border-color: #4154f1;
+  font-weight: 600;
+}
+
+.nav-pills .nav-link i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  color: #012970;
+}
+

@@ -1,0 +1,27 @@
+.students-table {
+  margin-top: 20px;
+}
+
+.students-table .table {
+  background: white;
+}
+
+.students-table .table thead {
+  background-color: #f6f9ff;
+}
+
+.students-table .table thead th {
+  font-weight: 600;
+  color: #012970;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.students-table .table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.students-table .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+

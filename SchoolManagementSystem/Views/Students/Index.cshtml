@@ -1,0 +1,116 @@
+@model IEnumerable<SchoolManagementSystem.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="container-fluid">
+    <div class="pagetitle">
+        <h1>Students</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item active">Students</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title">All Students</h5>
+                            <a asp-action="Create" class="btn btn-primary">
+                                <i class="bi bi-plus-circle"></i> Add New Student
+                            </a>
+                        </div>
+
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                @TempData["SuccessMessage"]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        }
+
+                        <form asp-action="Index" method="get" class="mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="searchTerm" class="form-control" 
+                                           placeholder="Search by name, admission no, class..." 
+                                           value="@ViewBag.SearchTerm" />
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Admission No</th>
+                                        <th>Name</th>
+                                        <th>Class</th>
+                                        <th>Section</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Any())
+                                    {
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.AdmissionNo</td>
+                                                <td><strong>@item.FirstName @item.LastName</strong></td>
+                                                <td>@item.Class</td>
+                                                <td>@item.Section</td>
+                                                <td>@item.Email</td>
+                                                <td>@item.Phone</td>
+                                                <td>
+                                                    <span class="badge @(item.Status == "Active" ? "bg-success" : "bg-secondary")">
+                                                        @item.Status
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a asp-action="Details" asp-route-id="@item.Id" 
+                                                       class="btn btn-sm btn-info" title="View">
+                                                        <i class="bi bi-eye"></i>
+                                                    </a>
+                                                    <a asp-action="Edit" asp-route-id="@item.Id" 
+                                                       class="btn btn-sm btn-primary" title="Edit">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </a>
+                                                    <a asp-action="Delete" asp-route-id="@item.Id" 
+                                                       class="btn btn-sm btn-danger" title="Delete">
+                                                        <i class="bi bi-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="8" class="text-center">
+                                                <p class="text-muted">No students found</p>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

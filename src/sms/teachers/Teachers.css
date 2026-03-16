@@ -1,0 +1,18 @@
+.teachers-table {
+  margin-top: 20px;
+}
+
+.teachers-table .table {
+  background: white;
+}
+
+.teachers-table .table thead {
+  background-color: #f6f9ff;
+}
+
+.teachers-table .table thead th {
+  font-weight: 600;
+  color: #012970;
+  border-bottom: 2px solid #e9ecef;
+}
+
